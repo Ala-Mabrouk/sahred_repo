@@ -1,0 +1,23 @@
+﻿@model Entity_DAL.Entities.SupportUser
+
+
+<h1>Log_in form</h1>
+<form asp-action="Log_in">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" class="form-control" />
+
+    </div>
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Password" class="control-label"></label>
+        <input asp-for="Password" class="form-control" />
+
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Log _in" class="btn btn-primary" />
+    </div>
+</form>

@@ -1,0 +1,81 @@
+﻿
+@model Entity_DAL.Entities.SupportUser
+
+
+@{
+    ViewBag.Title = "Index";
+
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm(actionName: "AddUser", controllerName: "Home", FormMethod.Post))
+{
+    if (ViewBag.message != null)
+    {
+        <h2>@ViewBag.message</h2>
+    }
+
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="form-group">
+            @Html.LabelFor(expression: model => model.Name, htmlAttributes: new { @class = "control-label" })
+            @Html.TextBoxFor(expression: model => model.Name, htmlAttributes: new { @class = "form-label" })
+            @Html.ValidationMessageFor(expression: model => model.Name, message: null, htmlAttributes: new { @class="text-danger"})
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            @Html.LabelFor(expression: model => model.LastName, htmlAttributes: new { @class = "control-label" })
+            @Html.TextBoxFor(expression: model => model.LastName, htmlAttributes: new { @class = "form-label" })
+            @Html.ValidationMessageFor(expression: model => model.LastName, message: null, htmlAttributes: new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            @Html.LabelFor(expression: model => model.Email, htmlAttributes: new { @class = "control-label" })
+            @Html.TextBoxFor(expression: model => model.Email, htmlAttributes: new { @class = "form-label" })
+            @Html.ValidationMessageFor(expression: model => model.Email, message: null, htmlAttributes: new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            @Html.LabelFor(expression: model => model.Password, htmlAttributes: new { @class = "control-label" })
+            @Html.TextBoxFor(expression: model => model.Password, htmlAttributes: new { @class = "form-label" })
+            @Html.ValidationMessageFor(expression: model => model.Password, message: null, htmlAttributes: new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+            @Html.LabelFor(expression: model => model.PhoneNumber, htmlAttributes: new { @class = "control-label" })
+            @Html.TextBoxFor(expression: model => model.PhoneNumber, htmlAttributes: new { @class = "form-label" })
+            @Html.ValidationMessageFor(expression: model => model.PhoneNumber, message: null, htmlAttributes: new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            @Html.LabelFor(expression: model => model.Role, htmlAttributes: new { @class = "control-label" })
+            @Html.TextBoxFor(expression: model => model.Role, htmlAttributes: new { @class = "form-label" })
+            @Html.ValidationMessageFor(expression: model => model.Role, message: null, htmlAttributes: new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            @Html.LabelFor(expression: model => model.Level, htmlAttributes: new { @class = "control-label" })
+            @Html.TextBoxFor(expression: model => model.Level, htmlAttributes: new { @class = "form-label" })
+            @Html.ValidationMessageFor(expression: model => model.Level, message: null, htmlAttributes: new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <input type="submit" value="add user" name="add_user" />
+
+        </div>
+    </div>
+
+</div>
+}
