@@ -4,14 +4,14 @@
     "C:\\Users\\worrior107\\source\\repos\\ticketing\\ticketing\\ticketing.csproj": {}
   },
   "projects": {
-    "C:\\Users\\worrior107\\source\\repos\\HelpDesk\\AppFeatures\\AppFeatures.csproj": {
+    "C:\\Users\\worrior107\\source\\repos\\ticketing\\AppFeatures\\AppFeatures.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\worrior107\\source\\repos\\HelpDesk\\AppFeatures\\AppFeatures.csproj",
+        "projectUniqueName": "C:\\Users\\worrior107\\source\\repos\\ticketing\\AppFeatures\\AppFeatures.csproj",
         "projectName": "AppFeatures",
-        "projectPath": "C:\\Users\\worrior107\\source\\repos\\HelpDesk\\AppFeatures\\AppFeatures.csproj",
+        "projectPath": "C:\\Users\\worrior107\\source\\repos\\ticketing\\AppFeatures\\AppFeatures.csproj",
         "packagesPath": "C:\\Users\\worrior107\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\worrior107\\source\\repos\\HelpDesk\\AppFeatures\\obj\\",
+        "outputPath": "C:\\Users\\worrior107\\source\\repos\\ticketing\\AppFeatures\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\worrior107\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\worrior107\\source\\repos\\HelpDesk\\Entity-DAL\\Entity-DAL.csproj": {
-                "projectPath": "C:\\Users\\worrior107\\source\\repos\\HelpDesk\\Entity-DAL\\Entity-DAL.csproj"
+              "C:\\Users\\worrior107\\source\\repos\\ticketing\\Entity-DAL\\Entity-DAL.csproj": {
+                "projectPath": "C:\\Users\\worrior107\\source\\repos\\ticketing\\Entity-DAL\\Entity-DAL.csproj"
               }
             }
           }
@@ -62,14 +62,14 @@
         }
       }
     },
-    "C:\\Users\\worrior107\\source\\repos\\HelpDesk\\Entity-DAL\\Entity-DAL.csproj": {
+    "C:\\Users\\worrior107\\source\\repos\\ticketing\\Entity-DAL\\Entity-DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\worrior107\\source\\repos\\HelpDesk\\Entity-DAL\\Entity-DAL.csproj",
+        "projectUniqueName": "C:\\Users\\worrior107\\source\\repos\\ticketing\\Entity-DAL\\Entity-DAL.csproj",
         "projectName": "Entity-DAL",
-        "projectPath": "C:\\Users\\worrior107\\source\\repos\\HelpDesk\\Entity-DAL\\Entity-DAL.csproj",
+        "projectPath": "C:\\Users\\worrior107\\source\\repos\\ticketing\\Entity-DAL\\Entity-DAL.csproj",
         "packagesPath": "C:\\Users\\worrior107\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\worrior107\\source\\repos\\HelpDesk\\Entity-DAL\\obj\\",
+        "outputPath": "C:\\Users\\worrior107\\source\\repos\\ticketing\\Entity-DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\worrior107\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -164,11 +164,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\worrior107\\source\\repos\\HelpDesk\\AppFeatures\\AppFeatures.csproj": {
-                "projectPath": "C:\\Users\\worrior107\\source\\repos\\HelpDesk\\AppFeatures\\AppFeatures.csproj"
+              "C:\\Users\\worrior107\\source\\repos\\ticketing\\AppFeatures\\AppFeatures.csproj": {
+                "projectPath": "C:\\Users\\worrior107\\source\\repos\\ticketing\\AppFeatures\\AppFeatures.csproj"
               },
-              "C:\\Users\\worrior107\\source\\repos\\HelpDesk\\Entity-DAL\\Entity-DAL.csproj": {
-                "projectPath": "C:\\Users\\worrior107\\source\\repos\\HelpDesk\\Entity-DAL\\Entity-DAL.csproj"
+              "C:\\Users\\worrior107\\source\\repos\\ticketing\\Entity-DAL\\Entity-DAL.csproj": {
+                "projectPath": "C:\\Users\\worrior107\\source\\repos\\ticketing\\Entity-DAL\\Entity-DAL.csproj"
               }
             }
           }

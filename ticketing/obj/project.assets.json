@@ -6016,13 +6016,13 @@
     },
     "AppFeatures/1.0.0": {
       "type": "project",
-      "path": "../../HelpDesk/AppFeatures/AppFeatures.csproj",
-      "msbuildProject": "../../HelpDesk/AppFeatures/AppFeatures.csproj"
+      "path": "../AppFeatures/AppFeatures.csproj",
+      "msbuildProject": "../AppFeatures/AppFeatures.csproj"
     },
     "Entity-DAL/1.0.0": {
       "type": "project",
-      "path": "../../HelpDesk/Entity-DAL/Entity-DAL.csproj",
-      "msbuildProject": "../../HelpDesk/Entity-DAL/Entity-DAL.csproj"
+      "path": "../Entity-DAL/Entity-DAL.csproj",
+      "msbuildProject": "../Entity-DAL/Entity-DAL.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6059,11 +6059,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\worrior107\\source\\repos\\HelpDesk\\AppFeatures\\AppFeatures.csproj": {
-              "projectPath": "C:\\Users\\worrior107\\source\\repos\\HelpDesk\\AppFeatures\\AppFeatures.csproj"
+            "C:\\Users\\worrior107\\source\\repos\\ticketing\\AppFeatures\\AppFeatures.csproj": {
+              "projectPath": "C:\\Users\\worrior107\\source\\repos\\ticketing\\AppFeatures\\AppFeatures.csproj"
             },
-            "C:\\Users\\worrior107\\source\\repos\\HelpDesk\\Entity-DAL\\Entity-DAL.csproj": {
-              "projectPath": "C:\\Users\\worrior107\\source\\repos\\HelpDesk\\Entity-DAL\\Entity-DAL.csproj"
+            "C:\\Users\\worrior107\\source\\repos\\ticketing\\Entity-DAL\\Entity-DAL.csproj": {
+              "projectPath": "C:\\Users\\worrior107\\source\\repos\\ticketing\\Entity-DAL\\Entity-DAL.csproj"
             }
           }
         }

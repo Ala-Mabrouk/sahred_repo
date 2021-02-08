@@ -12,8 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\HelpDesk\AppFeatures\AppFeatures.csproj" />
-    <ProjectReference Include="..\..\HelpDesk\Entity-DAL\Entity-DAL.csproj" />
+    <ProjectReference Include="..\AppFeatures\AppFeatures.csproj" />
+    <ProjectReference Include="..\Entity-DAL\Entity-DAL.csproj" />
   </ItemGroup>
 
 </Project>
