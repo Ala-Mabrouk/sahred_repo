@@ -15,68 +15,41 @@ namespace ticketing.Controllers
     {
         public IActionResult Index()
         {
-            //check if there is an open sesion in the app 
-            if (HttpContext.Session.GetString("userRole") != null)
-            {
-                return RedirectToAction("done", "home");
-            }
-            else
-                return View();
+            //need to check the session when we load the index view
+          return View();
         }
 
         public IActionResult Log_in()
           
         {
-            if (HttpContext.Session.GetString("userRole") != null)
-            {
-                return RedirectToAction("done", "home");
-            }else
+            //need to be re-implemented 
             return View();
         }
-        public IActionResult AddUser()
-        {
-            return View();
-        }
+ 
 
-        [HttpPost]
-        public   IActionResult Log_in(SupportUser user)
-        {
-            SupportUserFeature objSupportUserFeature = new SupportUserFeature();
-            var test = objSupportUserFeature.Log_in(user.Email,user.Password);
+        //[HttpPost]
+        //public   IActionResult Log_in(SupportUser user)
+        //{
+        //    SupportUserFeature objSupportUserFeature = new SupportUserFeature();
+        //    var test = objSupportUserFeature.Log_in(user.Email,user.Password);
 
-            //Creation of a session when a sucsseful log come in and moving to "done" view .
-            if (test==true)
-            {
-                HttpContext.Session.SetString("userRole",user.Role+":"+user.Level);
-                HttpContext.Session.SetInt32("userID", user.UserID);
-                return RedirectToAction("done", "home");
-            }
+        //    //Creation of a session when a sucsseful log come in and moving to "done" view .
+        //    if (test!=null)
+        //    {                System.Diagnostics.Debug.WriteLine("userRole: "+ user.RoleId + "");
+        //        System.Diagnostics.Debug.WriteLine("userID: "+user.Name);
+        //        HttpContext.Session.SetString("userRole",user.RoleId+"");
+        //        HttpContext.Session.SetInt32("userID", user.UserID);
 
-            return View();
+
+
+        //        return RedirectToAction("done", "home");
+        //    }
+
+        //    return View();
             
-        }
+        //}
 
-        public IActionResult done()
-        {
-            return View();
-        }
-
-
-
-
-        [HttpPost]
-        public IActionResult AddUser(SupportUser objSupport)
-        {
-            if (ModelState.IsValid)
-            {
-                SupportUserFeature objSupportUserFeature = new SupportUserFeature();
-
-                if (objSupportUserFeature.CreateNewUser(objSupport).Result)
-                {
-                    ViewBag.message = "done ! thank you";
-                }
-               
-            } return View();
-        }
+ 
+ 
     }
 }

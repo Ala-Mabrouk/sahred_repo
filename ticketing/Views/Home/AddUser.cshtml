@@ -56,20 +56,7 @@
             @Html.ValidationMessageFor(expression: model => model.PhoneNumber, message: null, htmlAttributes: new { @class = "text-danger" })
         </div>
     </div>
-    <div class="row">
-        <div class="form-group">
-            @Html.LabelFor(expression: model => model.Role, htmlAttributes: new { @class = "control-label" })
-            @Html.TextBoxFor(expression: model => model.Role, htmlAttributes: new { @class = "form-label" })
-            @Html.ValidationMessageFor(expression: model => model.Role, message: null, htmlAttributes: new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group">
-            @Html.LabelFor(expression: model => model.Level, htmlAttributes: new { @class = "control-label" })
-            @Html.TextBoxFor(expression: model => model.Level, htmlAttributes: new { @class = "form-label" })
-            @Html.ValidationMessageFor(expression: model => model.Level, message: null, htmlAttributes: new { @class = "text-danger" })
-        </div>
-    </div>
+
     <div class="row">
         <div class="form-group">
             <input type="submit" value="add user" name="add_user" />

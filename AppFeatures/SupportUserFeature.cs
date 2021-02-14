@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Entity_DAL.interfaces;
-
+using Entity_DAL.DAL;
+using System.Linq;
+ 
 namespace AppFeatures
 {
     public class SupportUserFeature
@@ -16,6 +18,7 @@ namespace AppFeatures
      
             try
             {
+                
                 var res = await newUser.AddUser(user);
 
                 if (res.UserID > 0)
@@ -35,16 +38,40 @@ namespace AppFeatures
             }
 
         }
+        public List<SupportUser> ListUsers()
+        {
+            using (var context = new DataBaseContext(DataBaseContext.ops.dbOptions))
+            {
+                return context.SupportUsers.ToList();
+            }
+        }
 
-        public  Boolean Log_in(string mail,string pass)
+        public  SupportUser Log_in(string mail,string pass)
         {
             try
             {
                 var res = newUser.Log_in(mail,pass);
-                if (res!=null)
-            {
-                return true;// we have a log in 
-            }
+                if (res != null)
+                {
+
+                    return res;
+
+
+                    ////getting the role
+
+                    //using (var context = new DataBaseContext(DataBaseContext.ops.dbOptions))
+                    //{
+                    //    string testo = context.Roles.SingleOrDefault(u => u.RoleID == res.RoleId).RoleName;
+
+                    //    switch (testo)
+                    //    {
+                    //        case "admin":return "admin";
+                    //        case "Client": return "client";
+                    //        default: return "SupportUser";
+                    //    }
+                    //}
+                }
+            
 
              
             }
@@ -54,10 +81,12 @@ namespace AppFeatures
                 Console.WriteLine("Erreur:" + ex);
 
             }
-            return false;
+            return null;
         }
 
-
+ 
 
     }
+
 }
+

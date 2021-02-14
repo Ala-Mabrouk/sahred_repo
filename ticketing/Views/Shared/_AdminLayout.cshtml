@@ -1,0 +1,252 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewData["Title"] Amdesk-ADMIN_HOME</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="description" content="Amdesk - Help Center HTML template for your digital products">
+    <meta name="keywords" content="helpdesk, forum, template, HTML template, responsive, clean">
+    <meta name="author" content="nK">
+
+    <link rel="icon" type="image/png" href="/lib/images/favicon.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- START: Styles -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700%7cMaven+Pro:400,500,700" rel="stylesheet"><!-- %7c -->
+    <!-- Bootstrap -->
+
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">
+
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="/lib/fancybox/dist/jquery.fancybox.min.css">
+
+    <!-- Pe icon 7 stroke -->
+    <link rel="stylesheet" href="/lib/pixeden-stroke-7-icon/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+
+    <!-- Swiper -->
+    <link rel="stylesheet" type="text/css" href="/lib/swiper/dist/css/swiper.min.css">
+
+    <!-- Bootstrap Select -->
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap-select/dist/css/bootstrap-select.min.css">
+
+    <!-- Dropzone -->
+    <link rel="stylesheet" type="text/css" href="/lib/dropzone/dist/min/dropzone.min.css">
+
+    <!-- Quill -->
+
+    <link rel="stylesheet" type="text/css" href="/lib/quill/dist/quill.snow.css">
+
+    <!-- Font Awesome -->
+    <script defer src="/lib/fontawesome-free/js/all.js"></script>
+    <script defer src="/lib/fontawesome-free/js/v4-shims.js"></script>
+
+    <!-- Amdesk -->
+    <link rel="stylesheet" href="/css/site.css">
+
+    <link href="/css/costum.css" rel="stylesheet" />
+
+    <!-- END: Styles -->
+    <!-- jQuery -->
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+
+
+
+    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <header>
+        <nav class="dx-navbar dx-navbar-top dx-navbar-collapse dx-navbar-sticky dx-navbar-expand-lg dx-navbar-dropdown-triangle dx-navbar-autohide">
+            <div class="container">
+
+                <a href="index.html" class="dx-nav-logo">
+                    <img src=" /images/logo.svg" alt="" width="88px">
+                </a>
+
+
+                <div class="dx-navbar-content">
+
+                    <ul class="dx-nav dx-nav-align-right">
+
+                        <li>
+                            <span>
+                                <p class="lead text-1"> @ViewBag.loged_Name</p>
+                            </span>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="dx-navbar dx-navbar-fullscreen">
+            <div class="container">
+                <button class="dx-navbar-burger">
+                    <span></span><span></span><span></span>
+                </button>
+                <div class="dx-navbar-content">
+
+
+
+                    <ul class="dx-nav dx-nav-align-right">
+
+                        <li>
+                            <span>
+                                @ViewBag.loged_Name
+
+                            </span>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+
+                        <a class="nav-link" asp-action="DashBoardAdmin">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Dashboard
+                        </a>
+
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            HelpDeskUsers
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" asp-action="ShowUsers">Users</a>
+                                <a class="nav-link">Teams</a>
+                                <a class="nav-link">Auto Assign</a>
+                            </nav>
+                        </div>
+                        <a class="nav-link" ">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            Knowledge Base
+                        </a>
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                            Configs
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                    AppConfig
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="login.html">----</a>
+                                        <a class="nav-link" href="register.html">*****</a>
+                                        <a class="nav-link" href="password.html">######</a>
+                                    </nav>
+                                </div>
+                                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                    Error-Pages
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="401.html">401 Page</a>
+                                        <a class="nav-link" href="404.html">404 Page</a>
+                                        <a class="nav-link" href="500.html">500 Page</a>
+                                    </nav>
+                                </div>
+                            </nav>
+                        </div>
+
+                        <a class="nav-link" href="charts.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            Knowledge Base
+                        </a>
+ 
+                    </div>
+                </div>
+
+            </nav>
+
+        </div>
+   
+    <div id="layoutSidenav_content">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="dx-footer">
+    </footer>
+
+
+    <!-- START: Scripts -->
+    <!-- Object Fit Images -->
+    <script src="~/lib/object-fit-images/dist/ofi.min.js"></script>
+
+    <!-- Popper -->
+
+    <script src="~/lib/popper.js/dist/umd/popper.min.js"></script>
+ 
+    <!-- Bootstrap -->
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Fancybox -->
+    <script src="~/lib/fancybox/dist/jquery.fancybox.min.js"></script>
+
+    <!-- Cleave -->
+    <script src="~/lib/cleave.js/dist/cleave.min.js"></script>
+
+    <!-- Validator -->
+    <script src="~/lib/validator/validator.min.js"></script>
+
+    <!-- Sticky Kit -->
+    <script src="~/lib/sticky-kit/dist/sticky-kit.min.js"></script>
+
+    <!-- Jarallax -->
+    <script src="~/lib/jarallax/dist/jarallax.min.js"></script>
+    <script src="~/lib/jarallax/dist/jarallax-video.min.js"></script>
+
+    <!-- Isotope -->
+    <script src="~/lib/isotope-layout/dist/isotope.pkgd.min.js"></script>
+
+    <!-- ImagesLoaded -->
+    <script src="~/lib/imagesloaded/imagesloaded.pkgd.min.js"></script>
+
+    <!-- Swiper -->
+    <script src="~/lib/swiper/dist/js/swiper.min.js"></script>
+
+    <!-- Gist Embed -->
+    <script src="~/lib/gist-embed/gist-embed.min.js"></script>
+
+    <!-- Bootstrap Select -->
+    <script src="~/lib/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Dropzone -->
+    <script src="~/lib/dropzone/dist/min/dropzone.min.js"></script>
+
+    <!-- Quill -->
+    <script src="~/lib/quill/dist/quill.min.js"></script>
+
+    <!-- The Amdesk -->
+    <script src=" ~/js/site.js"></script>
+    <script src="~/js/site.js"></script>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <!-- END: Scripts -->
+
+</body>
+</html>

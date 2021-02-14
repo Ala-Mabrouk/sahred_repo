@@ -26,9 +26,8 @@ namespace Entity_DAL.Entities
         public string Password { get; set; }
 
         public string PhoneNumber { get; set; }
-      
-        public string Role { get; set; }
-        
-        public int Level { get; set; }
+
+        public int RoleId { get; set; }
+        public Role Role { get; set; }
     }
 }

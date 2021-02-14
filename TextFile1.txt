@@ -1,0 +1,111 @@
+ @{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <!-- START: Styles -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700%7cMaven+Pro:400,500,700" rel="stylesheet"><!-- %7c -->
+    <!-- Bootstrap -->
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="~/lib/fancybox/dist/jquery.fancybox.min.css">
+
+    <!-- Pe icon 7 stroke -->
+    <link rel="stylesheet" href="~/lib/pixeden-stroke-7-icon/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+
+    <!-- Swiper -->
+    <link rel="stylesheet" type="text/css" href="~/lib/swiper/dist/css/swiper.min.css">
+
+    <!-- Bootstrap Select -->
+    <link rel="stylesheet" type="text/css" href="~/lib/bootstrap-select/dist/css/bootstrap-select.min.css">
+
+    <!-- Dropzone -->
+    <link rel="stylesheet" type="text/css" href="~/lib/dropzone/dist/min/dropzone.min.css">
+
+    <!-- Quill -->
+
+    <link rel="stylesheet" type="text/css" href="~/lib/quill/dist/quill.snow.css">
+
+    <!-- Font Awesome -->
+    <script defer src="~/lib/fontawesome-free/js/all.js"></script>
+    <script defer src="~/lib/fontawesome-free/js/v4-shims.js"></script>
+
+    <!-- Amdesk -->
+    <link rel="stylesheet" href=@Url.Content("css/site.css")>
+
+
+    <!-- END: Styles -->
+    <!-- jQuery -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+
+</head>
+<body>
+
+    <h1>THIS IS THE ADMIN DASHBOARD </h1>
+    <a asp-action="Index">click-me!</a>
+    <!-- START: Scripts -->
+    <!-- Object Fit Images -->
+    <script src="~/lib/object-fit-images/dist/ofi.min.js"></script>
+
+    <!-- Popper -->
+
+    <script src="~/lib/popper.js/dist/umd/popper.min.js"></script>
+
+
+
+    <!-- Bootstrap -->
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Fancybox -->
+    <script src="~/lib/fancybox/dist/jquery.fancybox.min.js"></script>
+
+    <!-- Cleave -->
+    <script src="~/lib/cleave.js/dist/cleave.min.js"></script>
+
+    <!-- Validator -->
+    <script src="~/lib/validator/validator.min.js"></script>
+
+    <!-- Sticky Kit -->
+    <script src="~/lib/sticky-kit/dist/sticky-kit.min.js"></script>
+
+    <!-- Jarallax -->
+    <script src="~/lib/jarallax/dist/jarallax.min.js"></script>
+    <script src="~/lib/jarallax/dist/jarallax-video.min.js"></script>
+
+    <!-- Isotope -->
+    <script src="~/lib/isotope-layout/dist/isotope.pkgd.min.js"></script>
+
+    <!-- ImagesLoaded -->
+    <script src="~/lib/imagesloaded/imagesloaded.pkgd.min.js"></script>
+
+    <!-- Swiper -->
+    <script src="~/lib/swiper/dist/js/swiper.min.js"></script>
+
+    <!-- Gist Embed -->
+    <script src="~/lib/gist-embed/gist-embed.min.js"></script>
+
+    <!-- Bootstrap Select -->
+    <script src="~/lib/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Dropzone -->
+    <script src="~/lib/dropzone/dist/min/dropzone.min.js"></script>
+
+    <!-- Quill -->
+    <script src="~/lib/quill/dist/quill.min.js"></script>
+
+    <!-- The Amdesk -->
+    <script src=" ~/js/site.js"></script>
+    <script src="~/js/site.js"></script>
+    <!-- END: Scripts -->
+
+</body>
+</html>

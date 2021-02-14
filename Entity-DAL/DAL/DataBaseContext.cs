@@ -44,6 +44,7 @@ namespace Entity_DAL.DAL
         }
         
         public DbSet<SupportUser> SupportUsers { get; set; }
+        public DbSet<Role> Roles { get; set; }
 
     }
 
