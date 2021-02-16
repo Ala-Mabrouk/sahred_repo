@@ -13,6 +13,10 @@ namespace AppFeatures
     {
         ISupportUser newUser = new Entity_DAL.functions.SupportUserFonctions();
 
+
+
+
+
         public async Task<Boolean> CreateNewUser(SupportUser user)
         {
      
@@ -38,6 +42,7 @@ namespace AppFeatures
             }
 
         }
+       
         public List<SupportUser> ListUsers()
         {
             using (var context = new DataBaseContext(DataBaseContext.ops.dbOptions))
@@ -46,7 +51,7 @@ namespace AppFeatures
             }
         }
 
-        public  SupportUser Log_in(string mail,string pass)
+        public  string Log_in(string mail,string pass)
         {
             try
             {
@@ -54,22 +59,20 @@ namespace AppFeatures
                 if (res != null)
                 {
 
-                    return res;
 
+                    //getting the role
 
-                    ////getting the role
+                    using (var context = new DataBaseContext(DataBaseContext.ops.dbOptions))
+                    {
+                        string testo = context.Roles.SingleOrDefault(u => u.RoleID == res.RoleId).RoleName;
 
-                    //using (var context = new DataBaseContext(DataBaseContext.ops.dbOptions))
-                    //{
-                    //    string testo = context.Roles.SingleOrDefault(u => u.RoleID == res.RoleId).RoleName;
-
-                    //    switch (testo)
-                    //    {
-                    //        case "admin":return "admin";
-                    //        case "Client": return "client";
-                    //        default: return "SupportUser";
-                    //    }
-                    //}
+                        switch (testo)
+                        {
+                            case "admin": return "admin?"+res.UserID;
+                            case "client": return "client?" + res.UserID;
+                            default: return "SupportUser?" + res.UserID ;
+                        }
+                    }
                 }
             
 
@@ -84,7 +87,10 @@ namespace AppFeatures
             return null;
         }
 
- 
+        public SupportUser getUser(int id)
+        {
+            return newUser.GetUser(id);
+        }
 
     }
 

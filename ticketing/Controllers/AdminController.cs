@@ -3,6 +3,7 @@ using Entity_DAL.DAL;
 using Entity_DAL.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Linq;
 
 
@@ -11,10 +12,24 @@ namespace ticketing.Controllers
     public class AdminController : Controller
     {
 
+        //global variable of SupportUserFeature
+       private SupportUserFeature objSupportUserFeature = new SupportUserFeature();
+
+
         //this will open a login-Admin page
         public ActionResult Index()
         {
+
+            if (HttpContext.Session.GetString("userRole") != null)
+            {
+               return RedirectToAction("DashBoard", "Admin");
+            }
+            else
+            {
+
             return View();
+            }
+            
         }
 
 
@@ -22,16 +37,23 @@ namespace ticketing.Controllers
         [HttpPost]
         public IActionResult Log_in(SupportUser user)
         {
-            SupportUserFeature objSupportUserFeature = new SupportUserFeature();
-            var test = objSupportUserFeature.Log_in(user.Email, user.Password);
+                        
+            string test = objSupportUserFeature.Log_in(user.Email, user.Password);
+
+
 
             //Creation of a session when a sucsseful Admin log come in and moving to "DashBoardAdmin" view .
-            if (test != null && test.RoleId == 1)
+            if (test != null)
             {
-                HttpContext.Session.SetString("userRole", test.RoleId + "");
-                HttpContext.Session.SetInt32("userID", test.UserID);
-                return RedirectToAction("DashBoardAdmin", "Admin");
+                string role = test.Substring(0,test.IndexOf('?'));
+                int id = Int32.Parse(test.Substring(test.IndexOf('?') + 1, test.Length- test.IndexOf('?')-1));
+                if (role == "admin")
+                {
 
+                    HttpContext.Session.SetString("userRole", role);
+                    HttpContext.Session.SetInt32("userID", id);
+                    return RedirectToAction("DashBoardAdmin", "Admin");
+                }
             }
             ViewBag.loged = "Check your email and password !";
             return RedirectToAction("Index", "Admin");
@@ -41,7 +63,7 @@ namespace ticketing.Controllers
         public IActionResult DashBoardAdmin()
 
         {
-            if (HttpContext.Session.GetString("userRole") == null)
+            if (HttpContext.Session.GetString("userRole") ==null || HttpContext.Session.GetString("userRole") != "admin")
             {
                 return RedirectToAction("Index", "Admin");
             }
@@ -58,7 +80,7 @@ namespace ticketing.Controllers
 
         public ActionResult ShowUsers()
         {
-            SupportUserFeature objSupportUserFeature = new SupportUserFeature();
+           
             var usersList = objSupportUserFeature.ListUsers();
             ViewBag.usersList = usersList;
 
@@ -76,8 +98,6 @@ namespace ticketing.Controllers
         {
             if (ModelState.IsValid)
             {
-                SupportUserFeature objSupportUserFeature = new SupportUserFeature();
-
                 if (objSupportUserFeature.CreateNewUser(objSupport).Result)
                 {
                     return RedirectToAction("ShowUsers", "Admin");

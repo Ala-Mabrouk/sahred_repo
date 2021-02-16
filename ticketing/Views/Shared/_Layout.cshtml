@@ -1,11 +1,15 @@
-﻿<!DOCTYPE html>
+﻿
+@model Entity_DAL.Entities.SupportUser
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>@ViewData["Title"] Amdesk | Welcome to Amdesk</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
- 
+
     <meta name="description" content="Amdesk - Help Center HTML template for your digital products">
     <meta name="keywords" content="helpdesk, forum, template, HTML template, responsive, clean">
     <meta name="author" content="nK">
@@ -14,490 +18,61 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- START: Styles -->
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700%7cMaven+Pro:400,500,700" rel="stylesheet"><!-- %7c -->
-    <!-- Bootstrap -->
+     START: Styles 
+     Google Fonts 
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700%7cMaven+Pro:400,500,700" rel="stylesheet"> %7c 
+     Bootstrap 
 
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
 
-    <!-- Fancybox -->
+     Fancybox 
     <link rel="stylesheet" href="~/lib/fancybox/dist/jquery.fancybox.min.css">
 
-    <!-- Pe icon 7 stroke -->
+     Pe icon 7 stroke 
     <link rel="stylesheet" href="~/lib/pixeden-stroke-7-icon/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
 
-    <!-- Swiper -->
+     Swiper 
     <link rel="stylesheet" type="text/css" href="~/lib/swiper/dist/css/swiper.min.css">
 
-    <!-- Bootstrap Select -->
+     Bootstrap Select 
     <link rel="stylesheet" type="text/css" href="~/lib/bootstrap-select/dist/css/bootstrap-select.min.css">
 
-    <!-- Dropzone -->
+     Dropzone 
     <link rel="stylesheet" type="text/css" href="~/lib/dropzone/dist/min/dropzone.min.css">
 
-    <!-- Quill -->
+     Quill 
 
     <link rel="stylesheet" type="text/css" href="~/lib/quill/dist/quill.snow.css">
 
-    <!-- Font Awesome -->
+     Font Awesome 
     <script defer src="~/lib/fontawesome-free/js/all.js"></script>
     <script defer src="~/lib/fontawesome-free/js/v4-shims.js"></script>
 
-    <!-- Amdesk -->
+     Amdesk 
     <link rel="stylesheet" href="/css/site.css">
 
 
-    <!-- END: Styles -->
-    <!-- jQuery -->
+     END: Styles 
+     jQuery 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
 
 
 </head>
 <body>
-    <header>
-        <nav class="dx-navbar dx-navbar-top dx-navbar-collapse dx-navbar-sticky dx-navbar-expand-lg dx-navbar-dropdown-triangle dx-navbar-autohide">
-            <div class="container">
 
-                <a href="index.html" class="dx-nav-logo">
-                    <img src="~/lib/images/logo.svg" alt="" width="88px">
-                </a>
+    
+    @if (@ViewBag.log == "true")
+    {
 
+        @await Component.InvokeAsync("NavBarWithLog")
 
-                <button class="dx-navbar-burger">
-                    <span></span><span></span><span></span>
-                </button>
-
-                <div class="dx-navbar-content">
-
-                    <ul class="dx-nav dx-nav-align-left">
-
-                        <li class="dx-drop-item">
-                            <a href="store.html">
-                                Store
-                            </a><ul class="dx-navbar-dropdown">
-
-                                <li>
-                                    <a href="store.html">
-                                        Store
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="product.html">
-                                        Product
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="checkout.html">
-                                        Checkout
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dx-drop-item">
-                            <a href="blog.html">
-                                Blog
-                            </a><ul class="dx-navbar-dropdown">
-
-                                <li>
-                                    <a href="blog.html">
-                                        Blog
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="single-post.html">
-                                        Single Post
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dx-drop-item">
-                            <a href="help-center.html">
-                                Help Center
-                            </a><ul class="dx-navbar-dropdown">
-
-                                <li>
-                                    <a href="help-center.html">
-                                        Help Center
-                                    </a>
-                                </li>
-                                <li class="dx-drop-item">
-                                    <a href="documentations.html">
-                                        Documentations
-                                    </a><ul class="dx-navbar-dropdown">
-
-                                        <li>
-                                            <a href="documentations.html">
-                                                Documentations
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="single-documentation.html">
-                                                Single documentation
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="dx-drop-item">
-                                    <a href="articles.html">
-                                        Knowledge Base
-                                    </a><ul class="dx-navbar-dropdown">
-
-                                        <li>
-                                            <a href="articles.html">
-                                                Knowledge Base
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="single-article-category.html">
-                                                Single Article Category
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="single-article.html">
-                                                Single Article
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="dx-drop-item">
-                                    <a href="forums.html">
-                                        Forums
-                                    </a><ul class="dx-navbar-dropdown">
-
-                                        <li>
-                                            <a href="forums.html">
-                                                Forums
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="topics.html">
-                                                Topics
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="single-topic.html">
-                                                Single Topic
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="dx-drop-item">
-                                    <a href="ticket.html">
-                                        Ticket System
-                                    </a><ul class="dx-navbar-dropdown">
-
-                                        <li>
-                                            <a href="ticket.html">
-                                                Ticket System
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="ticket-submit.html">
-                                                Submit Ticket
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="ticket-submit-2.html">
-                                                Submit Ticket 2
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="single-ticket.html">
-                                                Single Ticket
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dx-drop-item">
-                            <a href="account.html">
-                                Account
-                            </a><ul class="dx-navbar-dropdown">
-
-                                <li>
-                                    <a href="account.html">
-                                        Account
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="account-licenses.html">
-                                        Licenses
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="account-settings.html">
-                                        Settings
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                    <ul class="dx-nav dx-nav-align-right">
-                        <li>
-                            <div class="dropdown dx-dropdown dx-dropdown-checkout">
-                                <a class="dx-nav-icon" href="#" role="button" id="dropdownCheckout" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="dx-nav-badge">2</span>
-                                    <span class="icon dx-icon-bag"></span>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="dropdownCheckout">
-                                    <table class="dx-table dx-table-checkout">
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row" class="dx-table-checkout-img">
-                                                    <a href="product.html"><img src="~/lib/images//product-1-sm.png" alt=""></a>
-                                                </th>
-                                                <td class="dx-table-checkout-title">
-                                                    <a href="product.html">Sensific – Saying Beast Lesser for in Fruitful</a>
-                                                </td>
-                                                <td class="dx-table-checkout-price">
-                                                    <div class="dx-table-checkout-price">$59</div>
-                                                </td>
-                                                <td class="dx-table-checkout-delete">
-                                                    <a href="#"><span class="icon pe-7s-close"></span></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" class="dx-table-checkout-img">
-                                                    <a href="product.html"><img src="~/lib/images//product-2-sm.png" alt=""></a>
-                                                </th>
-                                                <td class="dx-table-checkout-title">
-                                                    <a href="product.html">Minist – Subdue Above for Signs Dry is Have Great</a>
-                                                </td>
-                                                <td class="dx-table-checkout-price">
-                                                    <div class="dx-table-checkout-price">$39</div>
-                                                </td>
-                                                <td class="dx-table-checkout-delete">
-                                                    <a href="#"><span class="icon pe-7s-close"></span></a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <div class="d-flex justify-content-between dx-box-content pt-0 pb-0 mt-15 mnb-6">
-                                        <span>Total Payment:</span><span><strong>$98</strong></span>
-                                    </div>
-                                    <div class="dx-box-content">
-                                        <a href="checkout.html" class="dx-btn dx-btn-md dx-btn-block">Checkout</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <a data-fancybox data-touch="false" data-close-existing="true" data-src="#login" href="javascript:;">Log In</a>
-                        </li>
-                        <li>
-                            <span><a data-fancybox data-touch="false" data-close-existing="true" data-src="#signup" href="javascript:;" class="dx-btn dx-btn-md dx-btn-transparent">Sign Up</a></span>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <div class="dx-navbar dx-navbar-fullscreen">
-            <div class="container">
-                <button class="dx-navbar-burger">
-                    <span></span><span></span><span></span>
-                </button>
-                <div class="dx-navbar-content">
-
-                    <ul class="dx-nav dx-nav-align-left">
-
-                        <li class="dx-drop-item">
-                            <a href="store.html">
-                                Store
-                            </a><ul class="dx-navbar-dropdown">
-
-                                <li>
-                                    <a href="store.html">
-                                        Store
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="product.html">
-                                        Product
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="checkout.html">
-                                        Checkout
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dx-drop-item">
-                            <a href="blog.html">
-                                Blog
-                            </a><ul class="dx-navbar-dropdown">
-
-                                <li>
-                                    <a href="blog.html">
-                                        Blog
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="single-post.html">
-                                        Single Post
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dx-drop-item">
-                            <a href="help-center.html">
-                                Help Center
-                            </a><ul class="dx-navbar-dropdown">
-
-                                <li>
-                                    <a href="help-center.html">
-                                        Help Center
-                                    </a>
-                                </li>
-                                <li class="dx-drop-item">
-                                    <a href="documentations.html">
-                                        Documentations
-                                    </a><ul class="dx-navbar-dropdown">
-
-                                        <li>
-                                            <a href="documentations.html">
-                                                Documentations
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="single-documentation.html">
-                                                Single documentation
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="dx-drop-item">
-                                    <a href="articles.html">
-                                        Knowledge Base
-                                    </a><ul class="dx-navbar-dropdown">
-
-                                        <li>
-                                            <a href="articles.html">
-                                                Knowledge Base
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="single-article-category.html">
-                                                Single Article Category
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="single-article.html">
-                                                Single Article
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="dx-drop-item">
-                                    <a href="forums.html">
-                                        Forums
-                                    </a><ul class="dx-navbar-dropdown">
-
-                                        <li>
-                                            <a href="forums.html">
-                                                Forums
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="topics.html">
-                                                Topics
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="single-topic.html">
-                                                Single Topic
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="dx-drop-item">
-                                    <a href="ticket.html">
-                                        Ticket System
-                                    </a><ul class="dx-navbar-dropdown">
-
-                                        <li>
-                                            <a href="ticket.html">
-                                                Ticket System
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="ticket-submit.html">
-                                                Submit Ticket
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="ticket-submit-2.html">
-                                                Submit Ticket 2
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="single-ticket.html">
-                                                Single Ticket
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dx-drop-item">
-                            <a href="account.html">
-                                Account
-                            </a><ul class="dx-navbar-dropdown">
-
-                                <li>
-                                    <a href="account.html">
-                                        Account
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="account-licenses.html">
-                                        Licenses
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="account-settings.html">
-                                        Settings
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                    <ul class="dx-nav dx-nav-align-right">
-
-                        <li>
-                            <a class="dx-nav-icon" href="checkout.html">
-                                <span class="dx-nav-badge">2</span>
-                                <span class="icon dx-icon-bag"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a data-fancybox data-touch="false" data-close-existing="true" data-src="#login" href="javascript:;">Log In</a>
-                        </li>
-                        <li>
-                            <span><a data-fancybox data-touch="false" data-close-existing="true" data-src="#signup" href="javascript:;" class="dx-btn dx-btn-md dx-btn-transparent">Sign Up</a></span>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </div>
+    }
+    else
+    { @await Component.InvokeAsync("NavBarWithOutLog")}
 
 
+    @RenderBody()
 
-
-
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
 
     <footer class="dx-footer">
         <div class="dx-box-1">
@@ -594,6 +169,116 @@
         </div>
     </footer>
 
+    <div class="dx-popup dx-popup-signin" id="login">
+        <button type="button" data-fancybox-close class="fancybox-button fancybox-close-small" title="Close"><svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24"><path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path></svg></button>
+        <div class="dx-signin-content dx-signin text-center">
+            <h1 class="h3 text-white mb-30">Log In</h1>
+
+
+
+            <form class="dx-form" asp-action="Log_in" asp-controller="Home" method="post">
+                @*@using (Html.BeginForm(actionName: "Login", controllerName: "Home", FormMethod.Post))
+                    {*@
+
+                <div class="dx-form-group-md">
+                    <a href="account.html" class="dx-btn dx-btn-block dx-btn-popup dx-btn-envato d-flex align-items-center justify-content-center">
+                        <span class="fas fa-leaf mr-20"></span><span>Log in with Envato</span>
+                    </a>
+                </div>
+                <div class="dx-form-group-md">
+                    <div class="dx-signin-or">OR</div>
+                </div>
+                <div class="dx-form-group-md">
+                    <input type="text" asp-for="Email" class="form-control form-control-style-4" placeholder="username or email">
+                    @*@Html.TextBoxFor(expression: model => model.Email, htmlAttributes: new { @value = "Username Or Email", @class = "form-control form-control-style-4" })*@
+                </div>
+                <div class="dx-form-group-md">
+                    @*@Html.PasswordFor(expression: model => model.Password, htmlAttributes: new { @value = "Password", @class = "form-control form-control-style-4" })*@
+                    <input type="password" asp-for="Password" class="form-control form-control-style-4" placeholder="Password">
+                </div>
+                <div class="dx-form-group-md">
+                    <input type="submit" value="log in please " />
+                    @*<a asp-action="Log_in" class="dx-btn dx-btn-block dx-btn-popup">Log In</a>*@
+                </div>
+                <div class="dx-form-group-md">
+                    <div class="d-flex justify-content-between">
+                        <a data-fancybox data-touch="false" data-close-existing="true" data-src="#reset-password" href="javascript:;">Reset your password</a>
+                        <a data-fancybox data-touch="false" data-close-existing="true" data-src="#signup" href="javascript:;">Sign Up</a>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+    <div class="dx-popup dx-popup-signin" id="signup">
+        <button type="button" data-fancybox-close class="fancybox-button fancybox-close-small" title="Close"><svg xmlns="http://www.w3.org/2000/svg" version="10" viewBox="0 0 24 24"><path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path></svg></button>
+        <div class="dx-popup-content dx-signin text-center">
+            <h1 class="h3 text-white mb-30">Sign Up</h1>
+
+            <form action="#" class="dx-form">
+
+                <div class="dx-form-group-md">
+                    <a href="account.html" class="dx-btn dx-btn-block dx-btn-popup dx-btn-envato d-flex align-items-center justify-content-center">
+                        <span class="fas fa-leaf mr-20"></span><span>Sign Up with Envato</span>
+                    </a>
+                </div>
+                <div class="dx-form-group-md">
+                    <div class="dx-signin-or">OR</div>
+                </div>
+                <div class="dx-form-group-md">
+                    <input type="text" class="form-control form-control-style-4" placeholder="Username">
+                </div>
+                <div class="dx-form-group-md">
+                    <input type="email" class="form-control form-control-style-4" aria-describedby="emailHelp" placeholder="Email">
+                </div>
+                <div class="dx-form-group-md">
+                    <input type="password" class="form-control form-control-style-4" placeholder="Password">
+                </div>
+                <div class="dx-form-group-md">
+                    <input type="password" class="form-control form-control-style-4" placeholder="Confirm password">
+                </div>
+                <div class="dx-form-group-md">
+                    <a href="account.html" class="dx-btn dx-btn-block dx-btn-popup">Sign Up</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="dx-popup dx-popup-signin" id="reset-password">
+        <button type="button" data-fancybox-close class="fancybox-button fancybox-close-small" title="Close"><svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24"><path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path></svg></button>
+        <div class="dx-popup-content dx-signin text-center">
+            <h1 class="h3 text-white mb-30">Reset Password</h1>
+
+            <form action="#" class="dx-form">
+                <div class="dx-form-group-md">
+                    <input type="email" class="form-control form-control-style-4" aria-describedby="emailHelp" placeholder="Email">
+                </div>
+                <div class="dx-form-group-md">
+                    <button class="dx-btn dx-btn-block dx-btn-popup">Reset My Password</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="subscribe" class="dx-popup dx-popup-modal dx-popup-subscribe">
+        <button type="button" data-fancybox-close class="fancybox-button fancybox-close-small" title="Close"><svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24"><path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path></svg></button>
+        <div class="dx-box dx-box-decorated">
+            <div class="dx-box-content">
+                <h6 class="mnt-5 mnb-5">Subscribe to Newsletter</h6>
+            </div>
+            <div class="dx-separator"></div>
+            <div class="dx-box-content">
+                <p class="mnt-5 fs-15">Join the newsletter to receive news, updates, new products and freebies in your inbox.</p>
+                <form action="#" class="dx-form dx-form-group-inputs">
+                    <input type="email" name="" value="" aria-describedby="emailHelp" class="form-control form-control-style-2" placeholder="Your Email Address">
+                    <button class="dx-btn dx-btn-lg dx-btn-icon"><span class="icon fas fa-paper-plane"></span></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
 
     <!-- START: Scripts -->
     <!-- Object Fit Images -->
@@ -602,7 +287,7 @@
     <!-- Popper -->
 
     <script src="~/lib/popper.js/dist/umd/popper.min.js"></script>
- 
+
     <!-- Bootstrap -->
     <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
 
@@ -644,8 +329,11 @@
     <script src="~/lib/quill/dist/quill.min.js"></script>
 
     <!-- The Amdesk -->
-    <script src=" ~/js/site.js"></script>
-    <script src="~/js/site.js"></script>
+    <script src="~/js/amdesk-init.js" asp-append-version="true"></script>
+    <script src="~/js/amdesk.min.js" asp-append-version="true"></script>
+
+
+    @await RenderSectionAsync("Scripts", required: false)
     <!-- END: Scripts -->
 </body>
 </html>

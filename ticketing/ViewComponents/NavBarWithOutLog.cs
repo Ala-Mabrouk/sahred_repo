@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ticketing.Controllers
+namespace ticketing.ViewComponents
 {
-    public class Con_SupportUsers : Controller
+    public class NavBarWithOutLog : ViewComponent
     {
-        public IActionResult Index()
+        public IViewComponentResult Invoke()
         {
             return View();
         }

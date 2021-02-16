@@ -15,41 +15,40 @@ namespace ticketing.Controllers
     {
         public IActionResult Index()
         {
-            //need to check the session when we load the index view
-          return View();
-        }
+            // check the session when we load the index view
 
-        public IActionResult Log_in()
-          
-        {
-            //need to be re-implemented 
+            if (HttpContext.Session.GetString("userRole") != null)
+            {
+                ViewBag.Log = "true";
+            }
             return View();
         }
- 
 
-        //[HttpPost]
-        //public   IActionResult Log_in(SupportUser user)
-        //{
-        //    SupportUserFeature objSupportUserFeature = new SupportUserFeature();
-        //    var test = objSupportUserFeature.Log_in(user.Email,user.Password);
+        [HttpPost]
+        public IActionResult Log_in(SupportUser user)
+          
+        {
+            SupportUserFeature objSupportUserFeature = new SupportUserFeature();
+            string test = objSupportUserFeature.Log_in(user.Email, user.Password);
 
-        //    //Creation of a session when a sucsseful log come in and moving to "done" view .
-        //    if (test!=null)
-        //    {                System.Diagnostics.Debug.WriteLine("userRole: "+ user.RoleId + "");
-        //        System.Diagnostics.Debug.WriteLine("userID: "+user.Name);
-        //        HttpContext.Session.SetString("userRole",user.RoleId+"");
-        //        HttpContext.Session.SetInt32("userID", user.UserID);
+            if (test != null)
+            {
+                //getting role and userId from test='ROLE?ID'
+
+                string role = test.Substring(0,test.IndexOf('?'));
+                int id = Int32.Parse(test.Substring(test.IndexOf('?') + 1, test.Length- test.IndexOf('?')-1));
+
+                if (role == "client")
+                {
+                    HttpContext.Session.SetString("userRole", role);
+                    HttpContext.Session.SetInt32("userID", id);
+                    ViewBag.log = "true";
+                }
+            }
+         
+            return RedirectToAction("Index", "Home");
+        }
 
 
-
-        //        return RedirectToAction("done", "home");
-        //    }
-
-        //    return View();
-            
-        //}
-
- 
- 
     }
 }

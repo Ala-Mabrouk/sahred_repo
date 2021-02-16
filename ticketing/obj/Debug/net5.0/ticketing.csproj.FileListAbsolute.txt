@@ -78,7 +78,6 @@ C:\Users\worrior107\source\repos\ticketing\ticketing\obj\Debug\net5.0\Razor\View
 C:\Users\worrior107\source\repos\ticketing\ticketing\obj\Debug\net5.0\Razor\Views\Home\AddUser.cshtml.g.cs
 C:\Users\worrior107\source\repos\ticketing\ticketing\bin\Debug\net5.0\BCrypt.Net-Core.dll
 C:\Users\worrior107\source\repos\ticketing\ticketing\obj\Debug\net5.0\Razor\Views\Admin\Index.cshtml.g.cs
-C:\Users\worrior107\source\repos\ticketing\ticketing\obj\Debug\net5.0\Razor\Views\Con_SupportUsers\Index.cshtml.g.cs
 C:\Users\worrior107\source\repos\ticketing\ticketing\bin\Debug\net5.0\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\worrior107\source\repos\ticketing\ticketing\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\worrior107\source\repos\ticketing\ticketing\bin\Debug\net5.0\Microsoft.CodeAnalysis.dll
@@ -157,3 +156,8 @@ C:\Users\worrior107\source\repos\ticketing\ticketing\obj\Debug\net5.0\Razor\View
 C:\Users\worrior107\source\repos\ticketing\ticketing\obj\Debug\net5.0\Razor\Views\Admin\DashBoardAdmin.cshtml.g.cs
 C:\Users\worrior107\source\repos\ticketing\ticketing\obj\Debug\net5.0\Razor\Views\Admin\ShowUsers.cshtml.g.cs
 C:\Users\worrior107\source\repos\ticketing\ticketing\obj\Debug\net5.0\Razor\Views\Admin\AddUser.cshtml.g.cs
+C:\Users\worrior107\source\repos\ticketing\ticketing\obj\Debug\net5.0\Razor\Views\Shared\_SupportUserLayout.cshtml.g.cs
+C:\Users\worrior107\source\repos\ticketing\ticketing\obj\Debug\net5.0\Razor\Views\SupportUsers\Index.cshtml.g.cs
+C:\Users\worrior107\source\repos\ticketing\ticketing\obj\Debug\net5.0\Razor\Views\Home\FormLog.cshtml.g.cs
+C:\Users\worrior107\source\repos\ticketing\ticketing\obj\Debug\net5.0\Razor\Views\Shared\Components\NavBarWithoutLog\Default.cshtml.g.cs
+C:\Users\worrior107\source\repos\ticketing\ticketing\obj\Debug\net5.0\Razor\Views\Shared\Components\NavBarWithLog\Default.cshtml.g.cs

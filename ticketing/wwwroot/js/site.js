@@ -594,8 +594,8 @@
                 value: function initPluginDropzone() {
                     return _initPluginDropzone2.initPluginDropzone.call(this);
                 }
-            }]);
-
+                }]);
+            console.log("js is working");
             return AMDESK;
         }();
 
@@ -808,6 +808,7 @@
 
                 // Click on burger navbar
                 burger.on('click', function () {
+                    console.log("js is working");
                     burger.add(burgerFull).addClass('active');
                     $navbarFull.addClass('dx-navbar-fullscreen-open');
                     $navbarFull.removeClass('dx-navbar-fullscreen-closed');
@@ -817,6 +818,7 @@
 
                 // Click on burger navbar-fullscreen
                 burgerFull.on('click', function () {
+                    console.log("js is working");
                     burger.add(burgerFull).removeClass('active');
                     $navbarFull.removeClass('dx-navbar-fullscreen-open');
                     $navbarFull.addClass('dx-navbar-fullscreen-closed');
@@ -829,6 +831,7 @@
 
                 // Click on Esc
                 (0, _utility.$)(document).on('keydown', function (e) {
+
                     if (e.keyCode === 27 && $navbarFull.hasClass('dx-navbar-fullscreen-open')) {
                         burger.add(burgerFull).removeClass('active');
                         $navbarFull.removeClass('dx-navbar-fullscreen-open');

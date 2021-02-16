@@ -1,23 +1,35 @@
 ﻿@model Entity_DAL.Entities.SupportUser
 
+    <h1>Log_in form</h1>
+    <form class="dx-form">
+        @using (Html.BeginForm(actionName: "AddUser", controllerName: "Home", FormMethod.Post))
+        {
 
-<h1>Log_in form</h1>
-<form asp-action="Log_in">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <div class="form-group">
-        <label asp-for="Email" class="control-label"></label>
-        <input asp-for="Email" class="form-control" />
+            <div class="dx-form-group-md">
+                <a href="account.html" class="dx-btn dx-btn-block dx-btn-popup dx-btn-envato d-flex align-items-center justify-content-center">
+                    <span class="fas fa-leaf mr-20"></span><span>Log in with Envato</span>
+                </a>
+            </div>
+            <div class="dx-form-group-md">
+                <div class="dx-signin-or">OR</div>
+            </div>
+            <div class="dx-form-group-md">
+                <input type="text" asp-for="Email" class="form-control form-control-style-4" placeholder="username or email">
+                @Html.TextBoxFor(expression: model => model.Email, htmlAttributes: new { @value = "Username Or Email", @class = "form-control form-control-style-4" })
+            </div>
+            <div class="dx-form-group-md">
+                @Html.PasswordFor(expression: model => model.Password, htmlAttributes: new { @value = "Password", @class = "form-control form-control-style-4" })
+                <input type="password" asp-for="Password" class="form-control form-control-style-4" placeholder="Password">
+            </div>
+            <div class="dx-form-group-md">
+                <a asp-action="Log_in" class="dx-btn dx-btn-block dx-btn-popup">Log In</a>
+            </div>
+            <div class="dx-form-group-md">
+                <div class="d-flex justify-content-between">
+                    <a data-fancybox data-touch="false" data-close-existing="true" data-src="#reset-password" href="javascript:;">Reset your password</a>
+                    <a data-fancybox data-touch="false" data-close-existing="true" data-src="#signup" href="javascript:;">Sign Up</a>
+                </div>
+            </div>
+        }
+        </form>
 
-    </div>
-
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <div class="form-group">
-        <label asp-for="Password" class="control-label"></label>
-        <input asp-for="Password" class="form-control" />
-
-    </div>
-
-    <div class="form-group">
-        <input type="submit" value="Log _in" class="btn btn-primary" />
-    </div>
-</form>

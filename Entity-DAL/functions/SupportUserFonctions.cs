@@ -12,6 +12,13 @@ namespace Entity_DAL.functions
     public class SupportUserFonctions : ISupportUser
     {
 
+
+
+        //making a globale DataBaseContext variable :
+        private static DataBaseContext context = new DataBaseContext(DataBaseContext.ops.dbOptions);
+
+
+
         //Add user :only allowed to admin user , will be added later 
 
         public async Task<SupportUser> AddUser(SupportUser user)
@@ -23,28 +30,40 @@ namespace Entity_DAL.functions
 
             user.Password = newPass;
 
-            using (var context = new DataBaseContext(DataBaseContext.ops.dbOptions))
-            {
-                await context.AddAsync(user);
-                await context.SaveChangesAsync();
-            }
+
+
+            await context.AddAsync(user);
+            await context.SaveChangesAsync();
+
             return user;
         }
 
         public SupportUser Log_in(string mail, string pass)
         {
 
+            var res = context.SupportUsers.SingleOrDefault(u => u.Email == mail);
+            if (res != null && pass == res.Password)//BCrypt.Net.BCrypt.Verify(pass, res.Password))
+                return res;
+            else return null;
+
+        }
+
+        public SupportUser GetUser(int id)
+        {
             using (var context = new DataBaseContext(DataBaseContext.ops.dbOptions))
-            {
-                var res = context.SupportUsers.SingleOrDefault(u => u.Email == mail);
-                if (res != null && pass == res.Password)//BCrypt.Net.BCrypt.Verify(pass, res.Password))
-                    return res;
-                else return null;
-            }
+
+                return context.SupportUsers.SingleOrDefault(u => u.UserID == id);
 
 
         }
 
+        public List<SupportUser> ListUsers()
+        {
+            using (var context = new DataBaseContext(DataBaseContext.ops.dbOptions))
+
+                return context.SupportUsers.ToList();
+
+        }
 
     }
 }

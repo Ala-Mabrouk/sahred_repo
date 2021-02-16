@@ -10,6 +10,11 @@ namespace Entity_DAL.interfaces
     {
       // Task<SupportUser> AddUser(string name, string lname, string mail,string pass, string phone,string role,int level);
         SupportUser Log_in(string Email,string pass);
+       
         Task<SupportUser> AddUser(SupportUser user);
+       
+        SupportUser GetUser(int id);
+
+        List<SupportUser> ListUsers();
     }
 }
