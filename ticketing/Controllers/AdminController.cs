@@ -19,45 +19,45 @@ namespace ticketing.Controllers
         //this will open a login-Admin page
         public ActionResult Index()
         {
+            return RedirectToAction("DashBoardAdmin", "Admin");
+            //if (HttpContext.Session.GetString("userRole") != null)
+            //{
+            //   return RedirectToAction("DashBoardAdmin", "Admin");
+            //}
+            //else
+            //{
 
-            if (HttpContext.Session.GetString("userRole") != null)
-            {
-               return RedirectToAction("DashBoard", "Admin");
-            }
-            else
-            {
+            //return View();
+            //}
 
-            return View();
-            }
-            
         }
 
 
         //verifing the admin login in 
-        [HttpPost]
-        public IActionResult Log_in(SupportUser user)
-        {
+        //[HttpPost]
+        //public IActionResult Log_in(SupportUser user)
+        //{
                         
-            string test = objSupportUserFeature.Log_in(user.Email, user.Password);
+        //    string test = objSupportUserFeature.Log_in(user.Email, user.Password);
 
 
 
-            //Creation of a session when a sucsseful Admin log come in and moving to "DashBoardAdmin" view .
-            if (test != null)
-            {
-                string role = test.Substring(0,test.IndexOf('?'));
-                int id = Int32.Parse(test.Substring(test.IndexOf('?') + 1, test.Length- test.IndexOf('?')-1));
-                if (role == "admin")
-                {
+        //    //Creation of a session when a sucsseful Admin log come in and moving to "DashBoardAdmin" view .
+        //    if (test != null)
+        //    {
+        //        string role = test.Substring(0,test.IndexOf('?'));
+        //        int id = Int32.Parse(test.Substring(test.IndexOf('?') + 1, test.Length- test.IndexOf('?')-1));
+        //        if (role == "admin")
+        //        {
 
-                    HttpContext.Session.SetString("userRole", role);
-                    HttpContext.Session.SetInt32("userID", id);
-                    return RedirectToAction("DashBoardAdmin", "Admin");
-                }
-            }
-            ViewBag.loged = "Check your email and password !";
-            return RedirectToAction("Index", "Admin");
-        }
+        //            HttpContext.Session.SetString("userRole", role);
+        //            HttpContext.Session.SetInt32("userID", id);
+        //            return RedirectToAction("DashBoardAdmin", "Admin");
+        //        }
+        //    }
+        //    ViewBag.loged = "Check your email and password !";
+        //    return RedirectToAction("Index", "Admin");
+        //}
 
         //opens the admin page
         public IActionResult DashBoardAdmin()

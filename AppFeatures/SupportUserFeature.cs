@@ -22,12 +22,10 @@ namespace AppFeatures
      
             try
             {
-                
                 var res = await newUser.AddUser(user);
 
                 if (res.UserID > 0)
                 {
-                 
                     return true;
                 }
                 else
@@ -42,7 +40,7 @@ namespace AppFeatures
             }
 
         }
-       
+ 
         public List<SupportUser> ListUsers()
         {
             using (var context = new DataBaseContext(DataBaseContext.ops.dbOptions))

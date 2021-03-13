@@ -161,3 +161,4 @@ C:\Users\worrior107\source\repos\ticketing\ticketing\obj\Debug\net5.0\Razor\View
 C:\Users\worrior107\source\repos\ticketing\ticketing\obj\Debug\net5.0\Razor\Views\Home\FormLog.cshtml.g.cs
 C:\Users\worrior107\source\repos\ticketing\ticketing\obj\Debug\net5.0\Razor\Views\Shared\Components\NavBarWithoutLog\Default.cshtml.g.cs
 C:\Users\worrior107\source\repos\ticketing\ticketing\obj\Debug\net5.0\Razor\Views\Shared\Components\NavBarWithLog\Default.cshtml.g.cs
+C:\Users\worrior107\source\repos\ticketing\ticketing\obj\Debug\net5.0\Razor\Views\Home\Erreur.cshtml.g.cs

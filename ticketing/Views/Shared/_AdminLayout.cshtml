@@ -14,27 +14,10 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700%7cMaven+Pro:400,500,700" rel="stylesheet"><!-- %7c -->
     <!-- Bootstrap -->
-
     <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">
-
-    <!-- Fancybox -->
-    <link rel="stylesheet" href="/lib/fancybox/dist/jquery.fancybox.min.css">
-
-    <!-- Pe icon 7 stroke -->
-    <link rel="stylesheet" href="/lib/pixeden-stroke-7-icon/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
-
-    <!-- Swiper -->
-    <link rel="stylesheet" type="text/css" href="/lib/swiper/dist/css/swiper.min.css">
 
     <!-- Bootstrap Select -->
     <link rel="stylesheet" type="text/css" href="/lib/bootstrap-select/dist/css/bootstrap-select.min.css">
-
-    <!-- Dropzone -->
-    <link rel="stylesheet" type="text/css" href="/lib/dropzone/dist/min/dropzone.min.css">
-
-    <!-- Quill -->
-
-    <link rel="stylesheet" type="text/css" href="/lib/quill/dist/quill.snow.css">
 
     <!-- Font Awesome -->
     <script defer src="/lib/fontawesome-free/js/all.js"></script>
@@ -42,90 +25,92 @@
 
     <!-- Amdesk -->
     <link rel="stylesheet" href="/css/site.css">
-
     <link href="/css/costum.css" rel="stylesheet" />
 
     <!-- END: Styles -->
     <!-- jQuery -->
     <script src="/lib/jquery/dist/jquery.min.js"></script>
 
-
-
-    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
-
 </head>
 <body>
-    <header>
-        <nav class="dx-navbar dx-navbar-top dx-navbar-collapse dx-navbar-sticky dx-navbar-expand-lg dx-navbar-dropdown-triangle dx-navbar-autohide">
-            <div class="container">
+    <nav class="dx-navbar dx-navbar-top dx-navbar-collapse dx-navbar-sticky dx-navbar-expand-lg dx-navbar-dropdown-triangle dx-navbar-autohide">
+        <div class="container">
 
-                <a href="index.html" class="dx-nav-logo">
-                    <img src=" /images/logo.svg" alt="" width="88px">
-                </a>
-
-
-                <div class="dx-navbar-content">
-
-                    <ul class="dx-nav dx-nav-align-right">
-
-                        <li>
-                            <span>
-                                <p class="lead text-1"> @ViewBag.loged_Name</p>
-                            </span>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <div class="dx-navbar dx-navbar-fullscreen">
-            <div class="container">
-                <button class="dx-navbar-burger">
-                    <span></span><span></span><span></span>
-                </button>
-                <div class="dx-navbar-content">
+            <a href="index.html" class="dx-nav-logo">
+                <img src="/images/logo.svg" alt="" width="88px">
+            </a>
 
 
+            <div class="dx-navbar-content">
 
-                    <ul class="dx-nav dx-nav-align-right">
+                <ul class="dx-nav dx-nav-align-right">
 
-                        <li>
-                            <span>
-                                @ViewBag.loged_Name
+                    <li>
+                        <span>
+                            <p class="lead text-1"> @ViewBag.loged_Name</p>
+                        </span>
+                    </li>
 
-                            </span>
-                        </li>
-
-                    </ul>
-                </div>
+                </ul>
             </div>
         </div>
+    </nav>
+    <div class="dx-navbar dx-navbar-fullscreen">
+        <div class="container">
+            <button class="dx-navbar-burger">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="dx-navbar-content">
 
-    </header>
+
+
+                <ul class="dx-nav dx-nav-align-right">
+
+                    <li>
+                        <a class="dx-btn dx-btn-md dx-btn-transparent"> @ViewBag.loged_Name</a>
+
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
 
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
+                        <div class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                asp-action="DashBoardAdmin">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Dashboard
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Link 1</a>
+                                <a class="dropdown-item" href="#">Link 2</a>
+                                <a class="dropdown-item" href="#">Link 3</a>
+                            </div>
+                        </div>
 
-                        <a class="nav-link" asp-action="DashBoardAdmin">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Dashboard
-                        </a>
 
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+
+
+
+                        <a class="nav-link collapsed" href="#collapseLayouts" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                             HelpDeskUsers
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" asp-action="ShowUsers">Users</a>
-                                <a class="nav-link">Teams</a>
-                                <a class="nav-link">Auto Assign</a>
-                            </nav>
+                            @*<nav class="sb-sidenav-menu-nested nav">*@
+                            <a class="nav-link" asp-action="ShowUsers">Users</a>
+                            <a class="nav-link">Teams</a>
+                            <a class="nav-link">Auto Assign</a>
+                            @*</nav>*@
                         </div>
                         <a class="nav-link" ">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
@@ -181,68 +166,29 @@
             </main>
         </div>
 
-        <footer class="dx-footer">
-        </footer>
-
-
-        <!-- START: Scripts -->
-        <!-- Object Fit Images -->
-        <script src="~/lib/object-fit-images/dist/ofi.min.js"></script>
-
-        <!-- Popper -->
-
-        <script src="~/lib/popper.js/dist/umd/popper.min.js"></script>
-
-        <!-- Bootstrap -->
-        <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-
-        <!-- Fancybox -->
-        <script src="~/lib/fancybox/dist/jquery.fancybox.min.js"></script>
-
-        <!-- Cleave -->
-        <script src="~/lib/cleave.js/dist/cleave.min.js"></script>
-
-        <!-- Validator -->
-        <script src="~/lib/validator/validator.min.js"></script>
-
-        <!-- Sticky Kit -->
-        <script src="~/lib/sticky-kit/dist/sticky-kit.min.js"></script>
-
-        <!-- Jarallax -->
-        <script src="~/lib/jarallax/dist/jarallax.min.js"></script>
-        <script src="~/lib/jarallax/dist/jarallax-video.min.js"></script>
-
-        <!-- Isotope -->
-        <script src="~/lib/isotope-layout/dist/isotope.pkgd.min.js"></script>
-
-        <!-- ImagesLoaded -->
-        <script src="~/lib/imagesloaded/imagesloaded.pkgd.min.js"></script>
-
-        <!-- Swiper -->
-        <script src="~/lib/swiper/dist/js/swiper.min.js"></script>
-
-        <!-- Gist Embed -->
-        <script src="~/lib/gist-embed/gist-embed.min.js"></script>
-
-        <!-- Bootstrap Select -->
-        <script src="~/lib/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
-
-        <!-- Dropzone -->
-        <script src="~/lib/dropzone/dist/min/dropzone.min.js"></script>
-
-        <!-- Quill -->
-        <script src="~/lib/quill/dist/quill.min.js"></script>
-
-        <!-- The Amdesk -->
-        <script src="~/js/amdesk-init.js" asp-append-version="true"></script>
-        <script src="~/js/amdesk.min.js" asp-append-version="true"></script>
+    </div>
 
 
 
+    <!-- START: Scripts -->
+    <!-- Popper -->
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <!-- END: Scripts -->
+    <script src="/lib/popper.js/dist/umd/popper.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+    <!-- Bootstrap Select -->
+    <script src="/lib/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+
+    <!-- The Amdesk -->
+    <script src="/js/amdesk-init.js" asp-append-version="true"></script>
+    <script src="/js/amdesk.min.js" asp-append-version="true"></script>
+
+
+    <!-- END: Scripts -->
+
 
 </body>
 </html>
